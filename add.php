@@ -1,27 +1,37 @@
 <?php
 require "auth.php";
 ?>
-<center> <h1> Конюхов Михаил </h1> </center>
+
+<link rel="stylesheet" href="style/style.css" />
+<center> <h1> Конюхов Михаил </h1> 
 <hr />
 <p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
 <hr />
+</center>
 <h1> Добавить пост </h1>
 <form method="POST" action="">
 
-Название <input name="name" type="text"> </br>
+<p> Название </p> 
+<input name="name" type="text"> </br>
 </br>
 
 <textarea name="text" cols="40" rows="3"> </textarea>
 </br>
-<input type="submit" value="Добавть">
+<p> Ссылка на изображение </p>
+<input name="img" type="text"> </br>
+</br>
+<input type="submit" value="Создать пост">
+
+
 </form>
 
 <?php 
 
-if (isset($_POST['name']) && isset($_POST['text'])){
+if (isset($_POST['name']) && isset($_POST['text']) && isset($_POST['img'])){
 $name = $_POST['name'];
-
 $text = $_POST['text'];
+$img = $_POST['img'];
+
 $db_host = "localhost"; 
 $db_user = "root"; 
 $db_password = ""; 
@@ -32,7 +42,7 @@ mysql_query("SET NAMES 'cp1251'",$db);
 
 
      
-$result = mysql_query ("INSERT INTO ".$db_table." (name,text) VALUES ('$name','$text')");
+$result = mysql_query ("INSERT INTO ".$db_table." (name,text,img) VALUES ('$name','$text','$img')");
 if ($result = 'true'){
         echo "Пост опубликован";
     }else{

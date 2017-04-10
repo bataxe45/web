@@ -2,29 +2,50 @@
     <head>
         <meta charset="utf-8" />
         <title>Мой блог</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style/style.css" />
     </head>
 	<body>
 <center> <h1> Конюхов Михаил </h1> </center>
 <hr />
+<center>
 <p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
+</center>
 <hr />
 
 
 <?php
-
 	mysql_connect("localhost", "root", "") or die (mysql_error ());
 	mysql_select_db("blog") or die(mysql_error());
 	
 	$strSQL = mysql_query("SELECT * FROM post ORDER BY 'name' DESC");
-	
 	while($row = mysql_fetch_assoc($strSQL)){
-	echo "	<h2>{$row['name']}</h2>
-			{$row['text']}
-			</br>
- 			{$row['date']}";
-}
+
+	$a = '<img src='.$row[img].'> ';
+	$b = "<h1>{$row['name']}</h1>";
+	$c = "{$row['text']}";
+?>
+	<table>
+	<tr>
+	<td rowspan="2">
+	<? echo $a; ?>
+	</td>
+	<td style="height: 60px;">
+	<?  echo $b; ?>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<? echo $c;
+			 ?>
+	</td>
+	</tr>
+	</table>
+<?
+	}
 ?>
 
+
+
+</br>
 </body>
 </html>
