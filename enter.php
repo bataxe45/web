@@ -17,12 +17,12 @@ if($_POST['submit']){
 	}else echo '<p>Р›РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ РЅРµ РІРµСЂРµРЅС‹!</p>';
 }
 ?>
-<p><a href="index.php">Home</a> | <a href="contact.php">Add Post</a> | <a href="admin.php">Panel Admin</a></p>
+<p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
 <hr />
 
 <br />
 <form method="post">
-	Username: <input type="text" name="user" /><br />
-	Password: <input type="password" name="pass" /><br />
+	Логин: <input type="text" name="user" /><br />
+	Пароль: <input type="password" name="pass" /><br />
 	<input type="submit" name="submit" value="Р’РѕР№С‚Рё" />
 </form>
