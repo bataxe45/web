@@ -14,15 +14,15 @@ if($_POST['submit']){
 		$_SESSION['admin'] = $admin;
 		header("Location: admin.php");
 		exit;
-	}else echo '<p>РћС€РёР±РєР°вЂ№!</p>';
+	}else echo '<p style="color:red;">Ошибка!</p>';
 }
 ?>
-<p><a href="index.php">Home</a> | <a href="contact.php">Add Post</a> | <a href="admin.php">Panel Admin</a></p>
+<p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
 <hr />
 
 <br />
 <form method="post">
-	Username: <input type="text" name="user" /><br />
-	Password: <input type="password" name="pass" /><br />
-	<input type="submit" name="submit" value="Р вЂ™Р С•Р в„–РЎвЂљР С‘" />
+	Логин: <input type="text" name="user" /><br />
+	Пароль: <input type="password" name="pass" /><br />
+	<input type="submit" name="submit" value="Войти" />
 </form>
