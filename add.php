@@ -5,7 +5,7 @@ require "auth.php";
 <link rel="stylesheet" href="style/style.css" />
 <center> <h1> Конюхов Михаил </h1> 
 <hr />
-<p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
+<p><a href="index.php">Главная</a> </p>
 <hr />
 </center>
 <h1> Добавить пост </h1>

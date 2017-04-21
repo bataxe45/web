@@ -2,13 +2,41 @@
     <head>
         <meta charset="utf-8" />
         <title>Мой блог</title>
-        <link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/style.css" />
+		
+		
+		<?php
+		require_once 'bd.php';
+		$strSQL = mysql_query("SELECT * FROM design ORDER BY 'bg','namesite','descriptionsite' DESC LIMIT 1");
+		while($row = mysql_fetch_assoc($strSQL)){
+
+		$bg = "{$row['bg']}";
+		$namesite = "{$row['namesite']}";
+		$descriptionsite = "{$row['descriptionsite']}";
+		?>
+		
+		<style>
+		body{
+			background: <? echo $bg ?>;
+		}
+		</style>
+
     </head>
 	<body>
-<center> <h1> Конюхов Михаил </h1> </center>
+<center> 
+		
+		
+		
+		<h1> <? echo $namesite ?> </h1> 
+		<p> <? echo $descriptionsite ?> </p>
+
+		<?
+		}
+		?>
+</center>
 <hr />
 <center>
-<p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
+<p><a href="index.php">Главная</a> </p>
 </center>
 <hr />
 

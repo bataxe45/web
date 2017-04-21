@@ -17,18 +17,19 @@ if($_POST['submit']){
 	}else echo '<p style="color:red;">Ошибка!</p>';
 }
 ?>
-<link rel="stylesheet" href="style/style.css" />
-<center> <h1> Конюхов Михаил </h1> 
-<p><a href="index.php">Главная</a> | <a href="add.php">Добавить пост</a> | <a href="admin.php">Панель управления</a></p>
-<hr />
-</center> 
+<link rel="stylesheet" href="style/enter.css" />
+
 
 <br />
 <form method="post">
+<div class="enter">
 <center>
-	<p> Логин: </p> <input type="text" name="user" /><br />
-	<p> Пароль: </p> <input type="password" name="pass" /><br />
+	<h1> Top Blog </h1>
+	<input type="text" name="user" placeholder="Логин" /><br />
 	<br />
-	<input type="submit" name="submit" value="Войти" />
+	<input type="password" name="pass" placeholder="Пароль"/><br />
+	<br />
+	<input type="submit" name="submit" class="SingIn" value="Войти" />
 </center>
+</div>
 </form>

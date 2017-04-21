@@ -1,0 +1,10 @@
+body{
+	background: linear-gradient(to top, #FF8505, #FFB466);
+	
+}
+
+h1{
+	font-size: 40pt;
+    color: #fff;
+    font-family: monospace;
+}
